@@ -6,7 +6,7 @@ module.exports = function toReadable (number) {
 
   const TwoDigitAnumberTenths = ['', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
-  const ThreeDigitAnumberHundredths = ['hundred'];
+
 
  
     
@@ -25,18 +25,18 @@ module.exports = function toReadable (number) {
                         return TwoDigitAnumberTenths[i[0]] + ' ' + oneDigitAnumber[i[1]];
                         } else {
                             if ( i%100 == 0 ) {
-                                return oneDigitAnumber[i[0]] + ' ' + ThreeDigitAnumberHundredths[i[1]];
+                                return oneDigitAnumber[i[0]] + ' ' + 'hundred';
                             } else {
                                 if ( i > 100 & i%10 == 0 ) {
-                                    return oneDigitAnumber[i[0]] + ' ' + ThreeDigitAnumberHundredths[0] + ' ' + TwoDigitAnumberTenths[i[1]];
+                                    return oneDigitAnumber[i[0]] + ' ' + 'hundred' + ' ' + TwoDigitAnumberTenths[i[1]];
                                 } else {
                                     if ( i[1] == 0) {
-                                        return oneDigitAnumber[i[0]] + ' ' + ThreeDigitAnumberHundredths[0] + ' ' + oneDigitAnumber[i[2]];
+                                        return oneDigitAnumber[i[0]] + ' ' + 'hundred' + ' ' + oneDigitAnumber[i[2]];
                                     } else {
                                     if ( i[1] == 1) {
-                                        return oneDigitAnumber[i[0]] + ' ' + ThreeDigitAnumberHundredths[0] + ' ' + TwoDigitAnumber[i[2]];
+                                        return oneDigitAnumber[i[0]] + ' ' + 'hundred' + ' ' + TwoDigitAnumber[i[2]];
                                     } else {
-                                        return oneDigitAnumber[i[0]] + ' ' + ThreeDigitAnumberHundredths[0] + ' ' + TwoDigitAnumberTenths[i[1]] + ' ' + oneDigitAnumber[i[2]];
+                                        return oneDigitAnumber[i[0]] + ' ' + 'hundred' + ' ' + TwoDigitAnumberTenths[i[1]] + ' ' + oneDigitAnumber[i[2]];
                                     }
                                 }
                             }
